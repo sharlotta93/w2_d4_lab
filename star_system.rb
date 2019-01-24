@@ -58,8 +58,13 @@ end
   end
 
   def get_planet_names_sorted_by_increasing_distance_from_sun
-    planets_order = @planets.distance_from_sun
-    p planets_order.sort
+    planet_order = @planets.sort_by{ |planet| planet.distance_from_sun }
+    return planet_order.map { |planet| planet.name}
   end
+
+  # def planet_names_sorted_by_size_decreasing
+  #   planets_order = @planets.distance_from_sun
+  #
+  # end
 
 end
