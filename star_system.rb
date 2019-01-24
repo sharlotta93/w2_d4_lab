@@ -62,9 +62,10 @@ end
     return planet_order.map { |planet| planet.name}
   end
 
-  # def planet_names_sorted_by_size_decreasing
-  #   planets_order = @planets.distance_from_sun
-  #
-  # end
+  def get_planet_names_sorted_by_size_decreasing
+    planets_order = @planets.sort_by{ |planet| planet.diameter}
+    decreasing_order = planets_order.map { |planet| planet.name}
+    return decreasing_order.reverse!
+  end
 
 end
