@@ -26,6 +26,16 @@ end
     }
  end
 
+ def get_smallest_planet
+  @planets.reduce(@planets[0]) { |smallest_one, planet|
+      if smallest_one.diameter < planet.diameter
+        smallest_one
+      else
+        planet
+      end
+    }
+ end
+
 
 
 end
