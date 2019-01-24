@@ -46,6 +46,16 @@ end
    return planets_with_more_moons.map { |planet| planet.name }
  end
 
+ def get_number_of_planets_closer_than(distance)
+   planets_close_to_sun = @planets.find_all { |planet| planet.distance_from_sun < distance }
+   return planets_close_to_sun.count
+ end
+
+  def get_total_number_of_moons
+   total_moons = @planets.reduce(0) { |total, moon_number| total + moon_number}
+   return total_moons
+  end
+
 
 
 end
