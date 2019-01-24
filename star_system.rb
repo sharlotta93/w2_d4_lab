@@ -39,7 +39,12 @@ end
  def get_planets_with_no_moons
    no_moons = @planets.find_all { |planet| planet.number_of_moons == 0}
    return no_moons
- end 
+ end
+
+ def get_planets_with_more_moons(number)
+   planets_with_more_moons = @planets.find_all { |planet| planet.number_of_moons > number}
+   return planets_with_more_moons.map { |planet| planet.name }
+ end
 
 
 
