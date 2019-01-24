@@ -16,8 +16,15 @@ end
     return planet
   end
 
-
-
+ def get_largest_planet
+  @planets.reduce(@planets[0]) { |biggest_one, planet|
+      if biggest_one.diameter > planet.diameter
+        biggest_one
+      else
+        planet
+      end
+    }
+ end
 
 
 
