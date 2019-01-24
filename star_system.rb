@@ -52,10 +52,14 @@ end
  end
 
   def get_total_number_of_moons
-   total_moons = @planets.reduce(0) { |total, moon_number| total + moon_number}
+   total_moons = @planets.reduce(0) { |total, moon_number|
+     total + moon_number.number_of_moons }
    return total_moons
   end
 
-
+  def get_planet_names_sorted_by_increasing_distance_from_sun
+    planets_order = @planets.distance_from_sun
+    p planets_order.sort
+  end
 
 end
